@@ -1,39 +1,52 @@
 // Inputs
+// No se si esta calculadora ha quedado fina del todo :/
 
 var secuencialNumber = () => parseInt(document.getElementById('firstNumber').value);
-var parcialResult = 0; 
-
-//var secondNumber = () => parseInt(document.getElementById('SecondNumber').value);
-
+var parcialResult = 0;
 // Operaciones
 
 
-function calcSumar() {    
-    parcialResult = parcialResult + secuencialNumber();
+function calcSumar() {
+    if (!parcialResult) {
+        parcialResult = secuencialNumber();
+    } else {
+        parcialResult = parcialResult + secuencialNumber();
+    }
     return parcialResult;
 }
 
-function calcRestar() {    
-    parcialResult = parcialResult - secuencialNumber() ;
+function calcRestar() {
+    if (!parcialResult) {
+        parcialResult = secuencialNumber();
+    } else {
+        parcialResult = parcialResult - secuencialNumber();
+    }
     return parcialResult;
 }
 
-function calcDividir() {    
-    parcialResult =  parcialResult / secuencialNumber();
+function calcDividir() {
+    if (!parcialResult) {
+        parcialResult = secuencialNumber();        
+    } else {
+        parcialResult = parcialResult / secuencialNumber();
+    }
     return parcialResult;
 }
 
-function calcMultiplicar() {    
-    parcialResult = parcialResult * secuencialNumber();
+function calcMultiplicar() {
+    if (!parcialResult) {
+        parcialResult = secuencialNumber();
+    } else {
+        parcialResult = parcialResult * secuencialNumber();
+    }
     return parcialResult;
 }
+
 
 // Obtenemos los diferentes resultados
 
-var resultSumar = () => document.getElementById("result").innerText = calcSumar();
-var resultRestar = () => document.getElementById("result").innerText = calcRestar();
-var resultDividir = () => document.getElementById("result").innerText = calcDividir();
-var resultMultiplicar = () => document.getElementById("result").innerText = calcMultiplicar();
+
+var resultFinal = () => document.getElementById("result").innerText = parcialResult;
 var resultBorrar = () => document.getElementById("result").innerText = 'Resultado';
 
 
@@ -43,16 +56,15 @@ document.getElementById('botonSumar').addEventListener("click", ifcalcSumar);
 document.getElementById('botonRestar').addEventListener("click", ifcalcRestar);
 document.getElementById('botonDividir').addEventListener("click", ifcalcDividir);
 document.getElementById('botonMultiplicar').addEventListener("click", ifcalcMultiplicar);
+document.getElementById('botonResultado').addEventListener("click", ifcalcResult);
 document.getElementById('botonBorrar').addEventListener("click", ifcalcBorrar);
 
 
 function ifcalcSumar() {
-    if (!secuencialNumber()) {
+    if (!secuencialNumber() ) {
         document.getElementById("result").innerText = "Error, debes incluir dos números"
-    } else {
-        /*resultSumar(); */      
-        console.log(calcSumar());
-        
+    }else {
+       calcSumar();                 
     }
 }
 
@@ -60,8 +72,7 @@ function ifcalcRestar() {
     if (!secuencialNumber()) {
         document.getElementById("result").innerText = "Error, debes incluir dos números"
     } else {
-        resultRestar();
-        console.log(calcDividir());
+        calcRestar()        
     }
 }
 
@@ -69,8 +80,7 @@ function ifcalcDividir() {
     if (!secuencialNumber()) {
         document.getElementById("result").innerText = "Error, debes incluir dos números"
     } else {
-        resultDividir();
-         console.log(calcRestar());
+        calcDividir();           
     }
 }
 
@@ -78,14 +88,21 @@ function ifcalcMultiplicar() {
     if (!secuencialNumber()) {
         document.getElementById("result").innerText = "Error, debes incluir dos números"
     } else {
-        resultMultiplicar();
-         console.log(calcMultiplicar());
+        calcMultiplicar();   
+    }
+}
+
+function ifcalcResult() {
+    if (!secuencialNumber()) {
+        document.getElementById("result").innerText = "Error, debes incluir dos números"
+    } else { 
+        resultFinal();  
     }
 }
 
 function ifcalcBorrar() {
     document.getElementById('firstNumber').value = '';
-    document.getElementById('SecondNumber').value = '';
+    parcialResult = 0;
     resultBorrar();
 }
 
