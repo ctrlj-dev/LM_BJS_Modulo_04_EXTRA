@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+    <title>Laboratorio: Calculadora</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>Calculadora Secuencial</h1>
+            <div class="col-12 inputs">
+
+                <h2>Introduce un número &#x21D3;</h2>
+                <input id="firstNumber" type="number" />            
+
+            </div>
+            <div class="col-12 operadores">
+                <h2>Elige una operación &#x21D3;</h2>
+                <button id="botonSumar">+</button>
+                <button id="botonRestar">-</button>
+                <button id="botonMultiplicar">x</button>
+                <button id="botonDividir">/</button>
+                <button id="botonResultado">=</button>
+                <button id="botonBorrar">DEL</button>
+            </div>
+            <div class="col-12 resultado-container">
+                <span>&#10038;	</span><span class="resultado" id="result">Resultado</span><span>   &#10038;</span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
