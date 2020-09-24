@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Hoteles Extra</title>
+</head>
+
+<body>
+    <div class="container">
+        <select id="habType" name="tipo">
+            <option value="standard">Habitación standard</option>
+            <option value="junior_suite">Habitación junior suite</option>
+            <option value="suite">Habitación suite</option>
+        </select>
+        <input id="habspa" value="spa" type="checkbox">        
+        <select id="habOcupation" name="ocupation">
+            <option value="individual">Habitación individual</option>
+            <option value="doble">Habitación doble</option>
+            <option value="triple">Habitación triple</option>
+        </select>
+        <input id="habNights" type="number">
+        <input id="habParking" type="number">
+        <button id="buttonCalculate">Calcular</button>
+        <h2 id="resultadoFinal">Resultado</h2>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

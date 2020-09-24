@@ -1,5 +1,4 @@
 // Inputs
-// No se si esta calculadora ha quedado fina del todo :/
 
 var secuencialNumber = () => parseInt(document.getElementById('firstNumber').value);
 var parcialResult = 0;
@@ -44,6 +43,7 @@ function calcMultiplicar() {
 
 
 // Obtenemos los diferentes resultados
+
 
 
 var resultFinal = () => document.getElementById("result").innerText = parcialResult;
