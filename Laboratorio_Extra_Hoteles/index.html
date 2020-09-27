@@ -6,27 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;700&display=swap" rel="stylesheet">    <link rel="stylesheet" href="style.css">
     <title>Hoteles Extra</title>
 </head>
 
 <body>
+    <div class="fullwidth-img">
+        <div class="overlay"></div>
+        <img src="img/hotel-img.jpg" alt="imagen de hotel">
+        <h1>Realiza una reserva</h1>
+    </div>        
     <div class="container">
-        <select id="habType" name="tipo">
-            <option value="standard">Habitación standard</option>
-            <option value="junior_suite">Habitación junior suite</option>
-            <option value="suite">Habitación suite</option>
-        </select>
-        <input id="habspa" value="spa" type="checkbox">        
-        <select id="habOcupation" name="ocupation">
-            <option value="individual">Habitación individual</option>
-            <option value="doble">Habitación doble</option>
-            <option value="triple">Habitación triple</option>
-        </select>
-        <input id="habNights" type="number">
-        <input id="habParking" type="number">
-        <button id="buttonCalculate">Calcular</button>
-        <h2 id="resultadoFinal">Resultado</h2>
+        <div class="option-container">
+            <h3 class="option-title">Tipo de habitación</h3>
+            <select id="habType" name="tipo">
+                <option hidden selected>Selecciona una opción</option>
+                <option value="standard">Habitación standard</option>
+                <option value="junior_suite">Habitación junior suite</option>
+                <option value="suite">Habitación suite</option>
+            </select>
+        </div>
+        <div class="option-container">
+            <h3 class="option-title">Spa</h3>
+            <span class="spa-desc">Quiero acceso al Spa</span><input id="habspa" value="spa" type="checkbox">   
+        </div>
+        <div class="option-container">
+            <h3 class="option-title">Tamaño de habitación</h3>     
+            <select id="habOcupation" name="ocupation">
+                <option hidden selected>Selecciona una opción</option>
+                <option value="individual">Habitación individual</option>
+                <option value="doble">Habitación doble</option>
+                <option value="triple">Habitación triple</option>
+            </select>
+        </div>
+        <div class="option-container">
+            <h3 class="option-title">Nº de noches</h3>
+            <input id="habNights" value="1" type="number">
+        </div>
+        <div class="option-container">
+            <h3 class="option-title">Noches de parking</h3>
+            <input id="habParking" type="number">
+        </div>             
+        <!--<button id="buttonCalculate">Calcular</button>-->
+        <h2 id="resultadoFinal">Elige opciones para ver precio</h2>
     </div>
     <script src="app.js"></script>
 </body>
